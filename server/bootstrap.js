@@ -34,7 +34,7 @@ module.exports = ({strapi}) => {
         const signedFile = await strapi
           .plugin("upload")
           .service("file")
-          .signFileUrls(data);
+          .signFileUrls(fullData);
         if (signedFile.url.startsWith('http')) {
           fullDataUrl = signedFile.url;
         } else {
